@@ -28,7 +28,7 @@
 #include "ofMain.h"
 #include "ofxSuperPath.h"
 #include "ofxBrush.h"
-#include "ofxGenerative.h"
+#include "ofxParticle.h"
 
 
 class ofxKineticBrush : public ofxBrush

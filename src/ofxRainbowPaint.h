@@ -22,21 +22,61 @@
  
  **********************************************************************************/
 
-/********************************************************************************** 
- README: Includes all the paints made for drawnetic
- 
- **********************************************************************************/
+#ifndef OFXRAINBOWPAINT
+#define OFXRAINBOWPAINT
 
-#ifndef OFXPAINTS
-#define OFXPAINTS
-
+#include "ofMain.h"
+#include "ofxSuperPath.h"
 #include "ofxPaint.h"
-#include "ofxImagePaint.h"
-#include "ofxTripPaint.h"
-#include "ofxRainbowPaint.h"
-#include "ofxDynamicRainbowPaint.h"
-#include "ofxPalettePaint.h"
-#include "ofxDynamicPalettePaint.h"
-#include "ofxAudioPaint.h"
+
+class ofxRainbowPaint : public ofxPaint
+{    
+public:
+    ofxRainbowPaint(ofxSuperPath *_path, ofColor _color, float _opacity=255)
+    {
+        path = _path;
+        opacity = _opacity; 
+        color = _color; 
+        increment = 1.0; 
+    }    
+    
+    void setIncrement(float _increment)
+    {
+        increment = _increment; 
+    }
+    
+    virtual void update()
+    {
+
+    }
+    
+    virtual ofColor getColor(ofVec3f &pos, int index=0)
+    {
+        float hue = color.getHue();
+        hue+=increment*index; 
+        int ihue = (int)hue; 
+        ihue%=255; 
+        hue = ihue; 
+        ofColor clr = color; 
+        clr.setHue(hue);
+        return ofColor(clr, opacity); 
+    }
+    
+    virtual ofColor getColor(int x, int y, int index=0)
+    {      
+        float hue = color.getHue();
+        hue+=increment*index; 
+        int ihue = (int)hue; 
+        ihue%=255; 
+        hue = ihue; 
+        ofColor clr = color; 
+        clr.setHue(hue);        
+        return ofColor(clr, opacity);
+    }
+    
+    float increment; 
+};
+
+
 
 #endif

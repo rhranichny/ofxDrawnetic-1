@@ -22,26 +22,15 @@
  
  **********************************************************************************/
 
-/********************************************************************************** 
- README: Includes all the Brushes created for drawnetic
- 
- **********************************************************************************/
-
 #ifndef OFXBRUSHES
 #define OFXBRUSHES
 
 #include "ofxBrush.h"
-#include "ofxStaticBrush.h"
 #include "ofxKineticBrush.h"
 #include "ofxPerlinBrush.h"
-#include "ofxScatterBrush.h"
-#include "ofxVelocityBrush.h"
-#include "ofxAccelerationBrush.h"
 #include "ofxFlockingBrush.h"
 #include "ofxShatterBrush.h"
 #include "ofxRibbonBrush.h"
-#include "ofxShrinkBrush.h"
-//#include "ofxB2DCircleBrush.h"
-//#include "ofxB2DPolygonBrush.h"
+
 
 #endif

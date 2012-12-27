@@ -22,21 +22,68 @@
  
  **********************************************************************************/
 
-/********************************************************************************** 
- README: Includes all the paints made for drawnetic
- 
- **********************************************************************************/
+#ifndef OFXPALETTEPAINT
+#define OFXPALETTEPAINT
 
-#ifndef OFXPAINTS
-#define OFXPAINTS
-
+#include "ofMain.h"
+#include "ofxSuperPath.h"
 #include "ofxPaint.h"
-#include "ofxImagePaint.h"
-#include "ofxTripPaint.h"
-#include "ofxRainbowPaint.h"
-#include "ofxDynamicRainbowPaint.h"
-#include "ofxPalettePaint.h"
-#include "ofxDynamicPalettePaint.h"
-#include "ofxAudioPaint.h"
+
+class ofxPalettePaint : public ofxPaint
+{    
+public:
+    ofxPalettePaint()
+    {
+        
+    }
+    
+    ofxPalettePaint(ofxSuperPath *_path, vector<ofColor> _colors, float _opacity=255)
+    {
+        path = _path;
+        opacity = _opacity; 
+        colors = _colors; 
+        for(int i = 0; i < colors.size(); i++)
+        {
+            opacities.push_back(opacity);
+        }
+    }    
+    
+    virtual void setOpacity(float _opacity)
+    {
+        opacity = _opacity; 
+        opacities.clear(); 
+        for(int i = 0; i < colors.size(); i++)
+        {
+            opacities.push_back(opacity);
+        }
+    }    
+    
+    virtual void setOpacities(vector<float> _opacities)
+    {
+        opacities.clear(); 
+        opacities = _opacities; 
+    }
+    
+    
+    virtual void update()
+    {
+        
+    }
+    
+    virtual ofColor getColor(ofVec3f &pos, int index=0)
+    {
+        return ofColor(colors[index%colors.size()], opacity); 
+    }
+    
+    virtual ofColor getColor(int x, int y, int index=0)
+    {
+        return ofColor(colors[index%colors.size()], opacity);
+    }
+    
+    vector<ofColor> colors;
+    vector<float> opacities;
+};
+
+
 
 #endif

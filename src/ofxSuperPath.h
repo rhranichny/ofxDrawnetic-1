@@ -72,7 +72,7 @@ public:
     
     void drawPositions()
     {
-//        drawPoints();
+        this->draw();
     }
     
     void drawPointNumbers()

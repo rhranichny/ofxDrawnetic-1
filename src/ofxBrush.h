@@ -35,22 +35,21 @@
 #include "ofMain.h"
 #include "ofxPaint.h"
 #include "ofxSuperPath.h"
-#include "ofxGenerative.h"
 
 enum ofxBrushType
 {
-    OFX_BRUSH_BASE = 0,             //Done
-	OFX_BRUSH_KINETIC = 1,          //Done
-    OFX_BRUSH_PERLIN = 2,           //Done
-    OFX_BRUSH_FLOCKING = 3,         //Done
-    OFX_BRUSH_SCATTER = 4,          //Done
-    OFX_BRUSH_VELOCITY = 5,         //Done
-    OFX_BRUSH_ACCELERATION = 6,     //Done
-    OFX_BRUSH_SHATTER = 7,          //Done
-    OFX_BRUSH_RIBBON = 8,           //Done
-    OFX_BRUSH_SHRINK = 9,           //Done
-    OFX_BRUSH_B2D_CIRCLE = 10,      //Done
-    OFX_BRUSH_B2D_POLYGON = 11,     //Done
+    OFX_BRUSH_BASE = 0,
+	OFX_BRUSH_KINETIC = 1,
+    OFX_BRUSH_PERLIN = 2,
+    OFX_BRUSH_FLOCKING = 3,
+    OFX_BRUSH_SCATTER = 4,
+    OFX_BRUSH_VELOCITY = 5,
+    OFX_BRUSH_ACCELERATION = 6,
+    OFX_BRUSH_SHATTER = 7,
+    OFX_BRUSH_RIBBON = 8,
+    OFX_BRUSH_SHRINK = 9,
+    OFX_BRUSH_B2D_CIRCLE = 10,
+    OFX_BRUSH_B2D_POLYGON = 11,
     OFX_BRUSH_STATIC = 12
 };
 

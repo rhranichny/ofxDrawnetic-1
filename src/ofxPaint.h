@@ -38,7 +38,7 @@
 enum ofxPaintType
 {
     OFX_PAINT_BASE = 0,
-	OFX_PAINT_COLOR = 1,          //Done
+	OFX_PAINT_COLOR = 1,          
     OFX_PAINT_IMAGE = 2, 
     OFX_PAINT_DYNAMIC_COLOR = 3,
     OFX_PAINT_RAINBOW = 4, 
